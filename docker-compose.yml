@@ -1,0 +1,30 @@
+version: '3'
+
+
+services:
+
+  backend:
+    container_name: "backend"
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "8000:8000"
+    # command: [ "uvicorn", "api:app" ]
+    command: ["uvicorn", "api:app" ,"--host",  "0.0.0.0"]
+    restart: always
+
+  frontend:
+    container_name: "frontend"
+    image: code_generator_backend
+    # build:
+    #   context: .
+    #   dockerfile: dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "5500:5500" 
+    command: [ "python3", "-m", "http.server" ,"--directory", "frontend", "5500" ]
+    restart: always
+    
+   
