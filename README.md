@@ -54,4 +54,4 @@ Feel free to fork the project and submit pull requests with enhancements or fixe
 MIT
 
 ## Contact
-For any questions or suggestions, please reach out to [Your Contact Information].
+For any questions or suggestions, please reach out to tanveerkhan1284@gmail.com.
